@@ -1,0 +1,25 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Mes appareils</h2>
+      <p>Mis à jour : {{ lastUpdate | async | date: 'short' | uppercase }}</p>
+      <ul class="list-group">
+        <app-appareill  *ngFor="let appareil of appareils"
+                       [appareilName]="appareil.name"
+                       [appareilStatus]="appareil.status"></app-appareill>
+      </ul>
+      <button class="btn btn-success" 
+              [disabled]="!isAuth" 
+              (click) ="onAllumer()"> Tout allumer</button>
+    </div>
+  </div>
+</div>
